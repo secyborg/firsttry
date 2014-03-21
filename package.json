@@ -2,7 +2,7 @@
   "name": "node-js-sample",
   "version": "0.0.3",
   "description": "a sample node.js app for heroku",
-  "main": "web.js",
+  "main": "bitstarter.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-sample"
+    "url": "https://github.com/secyborg/firsttry"
   },
   "keywords": [
     "node",
