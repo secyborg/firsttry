@@ -45,6 +45,11 @@ var loadChecks = function(checksfile) {
     return JSON.parse(fs.readFileSync(checksfile));
 };
 
+var outJson = function(data) {
+  var output = JSON.stringify(data, null, 4);
+  console.log(output);
+}
+
 var checkHtmlFile = function(htmlfile, checksfile) {
     $ = cheerioHtmlFile(htmlfile);
     var checks = loadChecks(checksfile).sort();
@@ -56,7 +61,7 @@ var checkHtmlFile = function(htmlfile, checksfile) {
     return out;
 };
 
-var cheerioHtml = function(data, checksFile, out) {
+var cheerioHtml = function(data, checksfile) {
     $ = cheerio.load(data);
     var checks = loadChecks(checksfile).sort();
     var rst = {};
@@ -65,24 +70,24 @@ var cheerioHtml = function(data, checksFile, out) {
         rst[checks[ii]] = present;
     }
     return rst;
-}
+};
 
-var checkFile = function(htmlFile, checksFile, out) {
+var checkFile = function(htmlFile, checksFile) {
     fs.readFile(htmlFile, function(err, data){
         if(err) { console.log("%s does not exist. Exiting.", err)}
         else {
            var rst = cheerioHtml(data, checksFile);
            outJson(rst);
         }
-    })
-}
+    });
+};
 
-var checkUrl = function(url, checkFile, out) {
+var checkUrl = function(url, checksFile) {
   req.get(url).on('complete', function(data){
        var rst = cheerioHtml(data, checksFile);
        outJson(rst);
-  })
-}
+  });
+};
 
 var clone = function(fn) {
     // Workaround for commander.js issue.
@@ -90,10 +95,6 @@ var clone = function(fn) {
     return fn.bind({});
 };
 
-var outJson = function(data) {
-  var output = JSON.stringify(data, null, 4);
-  console.log(output);
-}
 
 if(require.main == module) {
     program
