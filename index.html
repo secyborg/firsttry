@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>HelloSample</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link type="text/css" rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css"/>
     <link type="text/css" rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css"/>
     <link type="text/css" rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"/>
@@ -22,7 +23,6 @@
       body {
             padding-top: 40px;
             padding-bottom: 40px;
-
       }
       .linediv-l {
         border-right:1px white solid;
@@ -50,9 +50,6 @@
     /* main body and heading */
     body {
       font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-    }
-    .top-menu {
-      background-color: black;
     }
     .heading, .subheading {
       font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
@@ -113,12 +110,11 @@
 </head>
 
 <body>
-  <div class="navbar navbar-inverse navbar-fixed-top ">
+  <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar inner top-menu">
       <div class="container">
         <button type="button" class="btn btn-navbar"
                 data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"> </span>
           <span class="icon-bar"> </span>
           <span class="icon-bar"> </span>
         </button>
@@ -154,16 +150,16 @@
         <div class="span8 offset2">
           <div class="statistics">
             <div class="span4">
-              <div class="linediv-l">
+              <div class="linediv-l lined collapse">
                 <h3>1000</h3><p>backers</p>
               </div>
             </div>
             <div class="span4">
-              <div class="linediv-c">
+              <div class="linediv-c lined collapse">
                 <h3>$6000</h3> <p>of $10,000</p>
               </div>
             </div>
-            <div class="span4">
+            <div class="span4 collapse in" id="days_left">
               <div class="linediv-r">
                 <h3>10</h3> <p>days left</p>
               </div>
@@ -180,8 +176,8 @@
           <button class="btn btn-success btn-large">PreOrder</button>
         </div>
         <div class="span8 offset2 social">
-          <button class="btn btn-twitter"><i class="icon-twitter"></i> | Twitter</button>
-          <button class="btn btn-facebook"><i class="icon-factbook"></i> | Facebook</button>
+          <button class="btn btn-twitter" data-toggle="collapse" data-target="#days_left"><i class="icon-twitter"></i> | Twitter</button>
+          <button class="btn btn-facebook" data-toggle="collapse" data-target=".lined"><i class="icon-factbook"></i> | Facebook</button>
         </div>
       </div>
      </div>
@@ -209,10 +205,10 @@
      <div class="row-fluid faq">
       <div class="span10 offset1">
         <h3>FAQ</h3>
-        <div class="accordion" id="accordion2">
+        <div class="accordion" id="helloworld">
           <div class="accordion-group">
             <div class="accordion-heading">
-              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#helloworld" href="#collapseOne">
                 <b> What Does FAQ Stands For? </b>
               </a>
             </div>
@@ -225,7 +221,7 @@
 
           <div class="accordion-group">
             <div class="accordion-heading">
-              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#helloworld" href="#collapseTwo">
                 <b> What's a Frequently Asked Question </b>
               </a>              
             </div>
@@ -238,7 +234,7 @@
 
           <div class="accordion-group">
             <div class="accordion-heading">
-              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#helloworld" href="#collapseThree">
                 <b> What's a Frequently Asked Question </b>
               </a>              
             </div>
